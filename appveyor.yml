@@ -2,9 +2,7 @@ version: 1.0.{build}-{branch}
 
 install:
   - nuget restore
-environment:
-  COVERALLS_REPO_TOKEN:
-    secure: dY3e2PttmI1QXanxytUMU0TqfHWIsuxsr
+
 build:
   project: school.sln
   verbosity: minimal
@@ -17,4 +15,4 @@ test_script:
     
     $env:APPVEYOR_BUILD_NUMBER
     
-    & $coveralls --opencover -i opencoverCoverage.xml --repoToken dY3e2PttmI1QXanxytUMU0TqfHWIsuxsr
+    & $coveralls --opencover -i opencoverCoverage.xml --repoToken "dY3e2PttmI1QXanxytUMU0TqfHWIsuxsr"
