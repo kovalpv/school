@@ -111,10 +111,5 @@ namespace school.shell.tests.View.Students
             eventClick.Verify(x => x(It.IsAny<object>(), It.IsAny<EventArgs>()), Times.Never());
         }
 
-        [Test]
-        public void FailTest()
-        {
-            Assert.Fail("test is fail...");
-        }
     }
 }
