@@ -14,5 +14,3 @@ test_script:
     $coveralls = (Resolve-Path "src/packages/coveralls.net.*/tools/csmacnz.coveralls.exe").ToString()
     
     $env:APPVEYOR_BUILD_NUMBER
-    
-    & $coveralls --opencover -i opencoverCoverage.xml --repoToken "dY3e2PttmI1QXanxytUMU0TqfHWIsuxsr"
