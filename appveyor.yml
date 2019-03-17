@@ -1,8 +1,9 @@
-configuration: Release
+version: 1.0.{build}-{branch}
 
-before build:
- - nuget restore
- 
-build: 
- verbosity: minimal
- publish_wap: true
+install:
+  - nuget restore
+
+build:
+  project: school.sln
+  verbosity: minimal
+
