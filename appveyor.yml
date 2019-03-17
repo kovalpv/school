@@ -2,7 +2,9 @@ version: 1.0.{build}-{branch}
 
 install:
   - nuget restore
-
+environment:
+  COVERALLS_REPO_TOKEN:
+    secure: dY3e2PttmI1QXanxytUMU0TqfHWIsuxsr
 build:
   project: school.sln
   verbosity: minimal
