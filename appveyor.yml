@@ -7,8 +7,9 @@ build:
   project: school.sln
   verbosity: minimal
 
-test_script:
-- ps: >-
+after_test:
+  -cmd: .\packages\coveralls.io.1.4.2\tools\coveralls.net.exe --opencover .\coverage.xml -r dY3e2PttmI1QXanxytUMU0TqfHWIsuxsr
+#- ps: >-
   #.\packages\OpenCover.4.7.922\tools\OpenCover.Console.exe -register:user -target:".\packages\NUnit.ConsoleRunner.3.9.0\tools\nunit3-console.exe" -targetargs:"/domain:single src\school.shell.tests\bin\debug\school.shell.tests.dll" -output:coverage.xml
   
   #.\packages\coveralls.io.1.4.2\tools\coveralls.net.exe --opencover .\coverage.xml --repo-token dY3e2PttmI1QXanxytUMU0TqfHWIsuxsr
