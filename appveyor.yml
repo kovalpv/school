@@ -11,6 +11,6 @@ test_script:
 - ps: >-
   .\packages\OpenCover.4.7.922\tools\OpenCover.Console.exe -register:user -target:".\packages\NUnit.ConsoleRunner.3.9.0\tools\nunit3-console.exe" -targetargs:"/domain:single src\school.shell.tests\bin\debug\school.shell.tests.dll" -output:coverage.xml
   
-  $coveralls = (Resolve-Path ".\packages\coveralls.io.1.4.2\tools\coveralls.net.exe").ToString()
+  $coveralls = (Resolve-Path "/packages/coveralls.io.1.4.2/tools/coveralls.net.exe").ToString()
   
   & $coveralls --opencover .\coverage.xml --repo-token dY3e2PttmI1QXanxytUMU0TqfHWIsuxsr
