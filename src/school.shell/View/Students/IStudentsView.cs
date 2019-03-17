@@ -6,5 +6,6 @@ namespace school.shell.View.Students
     {
         event EventHandler OnLoadStudents;
         void AddStudents(double mark, params StudentModel[] studentModel);
+        void AddAvgPoints(double avgPoints);
     }
 }

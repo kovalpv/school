@@ -1,4 +1,6 @@
-﻿namespace school.shell.View.Students
+﻿using System;
+
+namespace school.shell.View.Students
 {
     public class StudentsController
     {
@@ -12,6 +14,12 @@
             this.view = view;
             this.model = model;
             this.view.OnLoadStudents += View_OnLoadStudents;
+            this.model.AvgPointsChanged += Model_OnAvgPointsChanged;
+        }
+
+        private void Model_OnAvgPointsChanged(object sender, AvgPointsEventArg e)
+        {
+            this.view.AddAvgPoints(e.AvgPoints);
         }
 
         private void View_OnLoadStudents(object sender, System.EventArgs e)

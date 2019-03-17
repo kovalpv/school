@@ -70,9 +70,22 @@ namespace school.shell.tests.View.Students
                 };
             service.Setup(x => x.LoadStudents()).Returns(students);
 
-            var exception = Assert.Throws<NullReferenceException>(()=> button.PerformClick());
+            var exception = Assert.Throws<NullReferenceException>(() => button.PerformClick());
 
             Assert.AreEqual("Object reference not set to an instance of an object.", exception.Message);
+        }
+
+        [Test]
+        public void WhenStudentPointsIsChanged_ThenAvgChanged()
+        {
+            var students = new StudentModel[]
+                {
+                    new StudentModel{Points=100},
+                    new StudentModel{Points=50}
+                };
+            ScenarioCalculateAvg("75", students);
+            students[1].Points = 80;
+            Assert.AreEqual("90", view.LabelPoints.Text);
         }
     }
 }

@@ -18,11 +18,10 @@ namespace school.shell.View.Students
             InitializeComponent();
         }
 
-        public void AddStudents(double mark, params StudentModel[] studentModel)
+        public void AddStudents(double avgPoints, params StudentModel[] studentModel)
         {
             ListStudents.Items.Clear();
-
-            LabelPoints.Text = (Math.Round(mark, 2, MidpointRounding.AwayFromZero)).ToString();
+            AddAvgPoints(avgPoints);
             studentModel.ToList().ForEach(AddStudent);
         }
 
@@ -31,5 +30,10 @@ namespace school.shell.View.Students
             ListStudents.Items.Add(x.ToString());
         }
 
+        public void AddAvgPoints(double avgPoints)
+        {
+            LabelPoints.Text = (Math.Round(avgPoints, 2, MidpointRounding.AwayFromZero)).ToString();
+
+        }
     }
 }

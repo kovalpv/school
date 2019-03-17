@@ -49,7 +49,7 @@ namespace school.shell.tests.View.Students
             modelMock.Setup(x => x.AddStudents(It.IsAny<StudentModel[]>()));
             modelMock.Setup(x => x.AvgPoints).Returns(95);
             viewMock.Setup(x => x.AddStudents(It.IsAny<double>(), It.IsAny<StudentModel[]>()));
-            
+
             viewMock.Raise(x => x.OnLoadStudents += null, EventArgs.Empty);
 
             serviceMock.Verify(x => x.LoadStudents(), Times.Once);
@@ -58,5 +58,6 @@ namespace school.shell.tests.View.Students
             viewMock.Verify(x => x.AddStudents(It.IsAny<double>(), It.IsAny<StudentModel[]>()), Times.Once);
 
         }
+
     }
 }
