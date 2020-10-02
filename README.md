@@ -5,3 +5,4 @@
 [![Coverage Status](https://coveralls.io/repos/github/kovalpv/school/badge.svg?branch=master)](https://coveralls.io/github/kovalpv/school?branch=master)
 
 # school
+ 
